@@ -201,11 +201,13 @@ namespace textMagic_Desktop
             System.Diagnostics.Process.Start("https://my.textmagic.com/online/api/rest-api/keys-trial");
         }
 
+        //Save login data button MouseEnter animation.
         private void panel3_MouseEnter(object sender, EventArgs e)
         {
             panel4.BackColor = Color.White;
         }
 
+        //Save login data button MouseLeave animation.
         private void panel3_MouseLeave(object sender, EventArgs e)
         {
             if(saveData == true)
@@ -218,11 +220,13 @@ namespace textMagic_Desktop
             }
         }
 
+        //Save login data button MouseEnter animation.
         private void panel4_MouseEnter(object sender, EventArgs e)
         {
             panel4.BackColor = Color.White;
         }
 
+        //Save login data button click.
         private void panel3_Click(object sender, EventArgs e)
         {
             if(saveData == false)
@@ -238,6 +242,7 @@ namespace textMagic_Desktop
             }
         }
 
+        //Save login data button click.
         private void panel4_Click(object sender, EventArgs e)
         {
             if (saveData == false)
@@ -253,6 +258,7 @@ namespace textMagic_Desktop
             }
         }
 
+        //Save login data logic.
         void saveLogin()
         {
             switch(saveData)
