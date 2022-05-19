@@ -9,8 +9,10 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TextmagicRest;
-using TextmagicRest.Model;
+using TextMagicClient;
+using TextMagicClient.Api;
+using TextMagicClient.Client;
+using TextMagicClient.Model;
 
 namespace textMagic_Desktop
 {
@@ -45,15 +47,19 @@ namespace textMagic_Desktop
             CreateRoundedCorners(pictureBox1, 20);
             CreateRoundedCorners(pictureBox2, 20);
             CreateRoundedCorners(panel2, 20);
+            CreateRoundedCorners(panel5, 20);
             CreateRoundedCorners(panel4, 60);
             CreateRoundedCorners(panel3, 80);
             CreateRoundedCorners(textBox1, 5);
             CreateRoundedCorners(textBox2, 5);
+            CreateRoundedCorners(textBox3, 5);
+            CreateRoundedCorners(textBox4, 5);
             CreateRoundedCorners(label1, 5);
             CreateRoundedCorners(label2, 5);
             CreateRoundedCorners(label3, 10);
             CreateRoundedCorners(label4, 10);
             CreateRoundedCorners(label5, 10);
+            CreateRoundedCorners(label9, 10);
             fadeForm.Start();
 
             if(File.Exists(@"C:\temp\TextMagicLogin.txt"))
@@ -170,16 +176,22 @@ namespace textMagic_Desktop
         //Login button click.
         private void label3_Click(object sender, EventArgs e)
         {
-            var client = new Client(textBox1.Text, textBox2.Text);
-            var auth = client.Ping();
+            Configuration.Default.Username = textBox1.Text;
+            Configuration.Default.Password = textBox2.Text;
 
-            if(auth.Success)
+            var apiInstance = new TextMagicApi();
+            
+            try
             {
-                MessageBox.Show("success");
+                var result = apiInstance.Ping();
+                panel5.Visible = true;
+                panel5.BringToFront();
+
+                label10.Text = "Balance: " + apiInstance.GetCurrentUser().Balance.ToString() + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("fail");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -281,6 +293,79 @@ namespace textMagic_Desktop
                         }
                     }
                     break;
+            }
+        }
+
+        private void label9_MouseEnter(object sender, EventArgs e)
+        {
+            label9.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label9_MouseLeave(object sender, EventArgs e)
+        {
+            label9.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            string[] phonenr = textBox3.Text.Split();
+
+            for(int i = phonenr.Length; i >= 0; i--)
+            {
+                try
+                {
+                    var sendmMessageInputObject = new SendMessageInputObject
+                    {
+                        Text = textBox4.Text,
+                        Phones = phonenr[i],
+                    };
+
+                    Configuration.Default.Username = textBox1.Text;
+                    Configuration.Default.Password = textBox2.Text;
+
+                    var apiInstance = new TextMagicApi();
+
+                    var result = apiInstance.SendMessage(sendmMessageInputObject);
+                    label10.Text = "Balance: " + apiInstance.GetCurrentUser().Balance.ToString() + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+            }         
+        }
+
+        private void textBox4_MouseLeave(object sender, EventArgs e)
+        {
+            string[] phonenr = textBox3.Text.Split();
+            var apiInstance = new TextMagicApi();
+
+            int lengthofnrs = phonenr.Length;
+
+            try
+            {
+                label11.Text = "Cost: " + apiInstance.GetMessagePrice(text: textBox4.Text, phones: phonenr[0], contacts: phonenr[0]).Total.Value * lengthofnrs + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private void textBox3_MouseEnter(object sender, EventArgs e)
+        {
+            string[] phonenr = textBox3.Text.Split();
+            var apiInstance = new TextMagicApi();
+
+            int lengthofnrs = phonenr.Length;
+
+            try
+            {
+                label11.Text = "Cost: " + apiInstance.GetMessagePrice(text: textBox4.Text, phones: phonenr[0], contacts: phonenr[0]).Total.Value * lengthofnrs + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }
