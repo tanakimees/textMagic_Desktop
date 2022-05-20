@@ -54,6 +54,17 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -61,6 +72,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,6 +89,13 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(138)))));
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.label16);
+            this.panel5.Controls.Add(this.label15);
+            this.panel5.Controls.Add(this.label14);
+            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.label12);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label9);
@@ -395,6 +415,171 @@
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label12.Location = new System.Drawing.Point(611, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(292, 40);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Import contacts";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            this.label12.MouseEnter += new System.EventHandler(this.label12_MouseEnter);
+            this.label12.MouseLeave += new System.EventHandler(this.label12_MouseLeave);
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label13.Location = new System.Drawing.Point(611, 112);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(292, 81);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Import file must be a .txt file, where contacts\r\nare seperated by a new line.";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label14.Location = new System.Drawing.Point(923, 62);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(292, 40);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Previous message";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            this.label14.MouseEnter += new System.EventHandler(this.label14_MouseEnter);
+            this.label14.MouseLeave += new System.EventHandler(this.label14_MouseLeave);
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label15.Location = new System.Drawing.Point(923, 112);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(292, 50);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Allows you to resend the previously sent message.";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label16.Location = new System.Drawing.Point(611, 203);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(292, 40);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Contacts";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            this.label16.MouseEnter += new System.EventHandler(this.label16_MouseEnter);
+            this.label16.MouseLeave += new System.EventHandler(this.label16_MouseLeave);
+            // 
+            // label17
+            // 
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label17.Location = new System.Drawing.Point(611, 253);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(292, 50);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Shows you your saved contacts and allows you to choose them.";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.label20);
+            this.panel6.Controls.Add(this.label19);
+            this.panel6.Controls.Add(this.label18);
+            this.panel6.Controls.Add(this.dataGridView1);
+            this.panel6.Location = new System.Drawing.Point(610, 62);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(610, 538);
+            this.panel6.TabIndex = 24;
+            this.panel6.Visible = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(172, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(438, 540);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label18.Location = new System.Drawing.Point(0, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(152, 40);
+            this.label18.TabIndex = 19;
+            this.label18.Text = "Close";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label18.Click += new System.EventHandler(this.label18_Click);
+            this.label18.MouseEnter += new System.EventHandler(this.label18_MouseEnter);
+            this.label18.MouseLeave += new System.EventHandler(this.label18_MouseLeave);
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label19.Location = new System.Drawing.Point(0, 50);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(152, 40);
+            this.label19.TabIndex = 20;
+            this.label19.Text = "Import all";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            this.label19.MouseEnter += new System.EventHandler(this.label19_MouseEnter);
+            this.label19.MouseLeave += new System.EventHandler(this.label19_MouseLeave);
+            // 
+            // label20
+            // 
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.White;
+            this.label20.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label20.Location = new System.Drawing.Point(0, 100);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(152, 80);
+            this.label20.TabIndex = 21;
+            this.label20.Text = "Import selected";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            this.label20.MouseEnter += new System.EventHandler(this.label20_MouseEnter);
+            this.label20.MouseLeave += new System.EventHandler(this.label20_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,6 +605,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -450,6 +637,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
     }
 }
 

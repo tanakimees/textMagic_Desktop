@@ -22,6 +22,8 @@ namespace textMagic_Desktop
         bool fadeInOrOut = false;
         bool saveData = false;
 
+        TextMagicApi api = new TextMagicApi();
+
         //Imports necessary DLL file for drawing rounded corners.
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -60,6 +62,13 @@ namespace textMagic_Desktop
             CreateRoundedCorners(label4, 10);
             CreateRoundedCorners(label5, 10);
             CreateRoundedCorners(label9, 10);
+            CreateRoundedCorners(label12, 10);
+            CreateRoundedCorners(label14, 10);
+            CreateRoundedCorners(label16, 10);
+            CreateRoundedCorners(label18, 10);
+            CreateRoundedCorners(label19, 10);
+            CreateRoundedCorners(label20, 10);
+            CreateRoundedCorners(dataGridView1, 20);
             fadeForm.Start();
 
             if(File.Exists(@"C:\temp\TextMagicLogin.txt"))
@@ -178,16 +187,14 @@ namespace textMagic_Desktop
         {
             Configuration.Default.Username = textBox1.Text;
             Configuration.Default.Password = textBox2.Text;
-
-            var apiInstance = new TextMagicApi();
             
             try
             {
-                var result = apiInstance.Ping();
+                var result = api.Ping();
                 panel5.Visible = true;
                 panel5.BringToFront();
 
-                label10.Text = "Balance: " + apiInstance.GetCurrentUser().Balance.ToString() + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+                label10.Text = "Balance: " + api.GetCurrentUser().Balance.ToString() + api.GetCurrentUser().Currency.UnicodeSymbol.ToString();
             }
             catch (Exception ex)
             {
@@ -323,10 +330,32 @@ namespace textMagic_Desktop
                     Configuration.Default.Username = textBox1.Text;
                     Configuration.Default.Password = textBox2.Text;
 
-                    var apiInstance = new TextMagicApi();
+                    var result = api.SendMessage(sendmMessageInputObject);
+                    label10.Text = "Balance: " + api.GetCurrentUser().Balance.ToString() + api.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+                    MessageBox.Show("Message(s) were succesfully sent.");
 
-                    var result = apiInstance.SendMessage(sendmMessageInputObject);
-                    label10.Text = "Balance: " + apiInstance.GetCurrentUser().Balance.ToString() + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+                    if(File.Exists(@"C:\temp\TextMagicPreviouslySentSMSnumber.txt"))
+                    {
+                        File.Delete(@"C:\temp\TextMagicPreviouslySentSMSnumber.txt");
+                    }
+
+                    if (File.Exists(@"C:\temp\TextMagicPreviouslySentSMSmessage.txt"))
+                    {
+                        File.Delete(@"C:\temp\TextMagicPreviouslySentSMSmessage.txt");
+                    }
+
+                    using (StreamWriter sw = File.CreateText(@"C:\temp\TextMagicPreviouslySentSMSnumber.txt"))
+                    {
+                        sw.WriteLine(textBox3.Text);
+                        sw.Dispose();
+                    }
+
+                    using (StreamWriter sw1 = File.CreateText(@"C:\temp\TextMagicPreviouslySentSMSmessage.txt"))
+                    {
+                        sw1.WriteLine(textBox4.Text);
+                        sw1.Dispose();
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -338,13 +367,12 @@ namespace textMagic_Desktop
         private void textBox4_MouseLeave(object sender, EventArgs e)
         {
             string[] phonenr = textBox3.Text.Split();
-            var apiInstance = new TextMagicApi();
 
             int lengthofnrs = phonenr.Length;
 
             try
             {
-                label11.Text = "Cost: " + apiInstance.GetMessagePrice(text: textBox4.Text, phones: phonenr[0], contacts: phonenr[0]).Total.Value * lengthofnrs + apiInstance.GetCurrentUser().Currency.UnicodeSymbol.ToString();
+                label11.Text = "Cost: " + api.GetMessagePrice(text: textBox4.Text, phones: phonenr[0], contacts: phonenr[0]).Total.Value * lengthofnrs + api.GetCurrentUser().Currency.UnicodeSymbol.ToString();
             }
             catch (Exception ex)
             {
@@ -366,6 +394,149 @@ namespace textMagic_Desktop
             catch (Exception ex)
             {
 
+            }
+        }
+
+        private void label12_MouseEnter(object sender, EventArgs e)
+        {
+            label12.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label12_MouseLeave(object sender, EventArgs e)
+        {
+            label12.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select a .txt file.";
+            ofd.Filter = "Text files (*.txt) | *.txt";
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                textBox3.Text = sr.ReadToEnd();
+            }
+        }
+
+        private void label14_MouseEnter(object sender, EventArgs e)
+        {
+            label14.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label14_MouseLeave(object sender, EventArgs e)
+        {
+            label14.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            StreamReader sr1 = new StreamReader(@"C:\temp\TextMagicPreviouslySentSMSnumber.txt");
+            StreamReader sr2 = new StreamReader(@"C:\temp\TextMagicPreviouslySentSMSmessage.txt");
+
+            textBox3.Text = sr1.ReadToEnd();
+            textBox4.Text = sr2.ReadToEnd();
+
+            sr1.Dispose();
+            sr2.Dispose();
+        }
+
+        private void label16_MouseEnter(object sender, EventArgs e)
+        {
+            label16.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label16_MouseLeave(object sender, EventArgs e)
+        {
+            label16.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            panel6.Visible = true;
+
+            dataGridView1.ColumnCount = 4;
+            dataGridView1.Columns[0].Name = "First name";
+            dataGridView1.Columns[1].Name = "Last name";
+            dataGridView1.Columns[2].Name = "Phone";
+            dataGridView1.Columns[3].Name = "Country";
+
+            int rowsfordatagrid = api.GetContacts().Resources.Count;
+
+            for(int i = rowsfordatagrid - 1; i >= 0; i--)
+            {
+                string[] row =
+                {
+                    api.GetContacts().Resources[index:i].FirstName,
+                    api.GetContacts().Resources[index:i].LastName,
+                    api.GetContacts().Resources[index:i].Phone,
+                    api.GetContacts().Resources[index:i].Country.Name
+                };
+
+                dataGridView1.Rows.Add(row);
+            }
+        }
+
+        private void label18_MouseEnter(object sender, EventArgs e)
+        {
+            label18.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label18_MouseLeave(object sender, EventArgs e)
+        {
+            label18.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            panel6.Visible = false;
+        }
+
+        private void label19_MouseEnter(object sender, EventArgs e)
+        {
+            label19.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label19_MouseLeave(object sender, EventArgs e)
+        {
+            label19.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+            int rowsfordatagrid = api.GetContacts().Resources.Count;
+
+            textBox3.Text = "";
+            for(int i = rowsfordatagrid - 1; i >= 0; i--)
+            {
+                textBox3.Text += "+" + api.GetContacts().Resources[index: i].Phone + Environment.NewLine;
+            }
+        }
+
+        private void label20_MouseEnter(object sender, EventArgs e)
+        {
+            label20.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label20_MouseLeave(object sender, EventArgs e)
+        {
+            label20.BackColor = Color.FromArgb(42, 135, 185);
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+            int rowsfordatagrid = api.GetContacts().Resources.Count;
+
+            textBox3.Text = "";
+            for (int i = rowsfordatagrid; i >= 0; i--)
+            {
+                if(dataGridView1.Rows[i].Selected)
+                {
+                    textBox3.Text += "+" + dataGridView1.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
+                }
             }
         }
     }
