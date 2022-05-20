@@ -52,15 +52,21 @@ namespace textMagic_Desktop
             CreateRoundedCorners(panel5, 20);
             CreateRoundedCorners(panel4, 60);
             CreateRoundedCorners(panel3, 80);
-            CreateRoundedCorners(textBox1, 5);
-            CreateRoundedCorners(textBox2, 5);
+            CreateRoundedCorners(textBox1, 10);
+            CreateRoundedCorners(textBox2, 10);
             CreateRoundedCorners(textBox3, 5);
             CreateRoundedCorners(textBox4, 5);
-            CreateRoundedCorners(label1, 5);
-            CreateRoundedCorners(label2, 5);
+            CreateRoundedCorners(label1, 10);
+            CreateRoundedCorners(label2, 10);
             CreateRoundedCorners(label3, 10);
             CreateRoundedCorners(label4, 10);
             CreateRoundedCorners(label5, 10);
+            CreateRoundedCorners(label6, 10);
+            CreateRoundedCorners(label8, 10);
+            CreateRoundedCorners(label7, 10);
+            CreateRoundedCorners(label13, 10);
+            CreateRoundedCorners(label21, 10);
+            CreateRoundedCorners(label15, 10);
             CreateRoundedCorners(label9, 10);
             CreateRoundedCorners(label12, 10);
             CreateRoundedCorners(label14, 10);
@@ -317,6 +323,11 @@ namespace textMagic_Desktop
         {
             string[] phonenr = textBox3.Text.Split();
 
+            if(textBox3.Text == "" || textBox4.Text == "")
+            {
+                MessageBox.Show("Number field and/or message field cannot be empty.");
+            }
+
             for(int i = phonenr.Length; i >= 0; i--)
             {
                 try
@@ -400,11 +411,14 @@ namespace textMagic_Desktop
         private void label12_MouseEnter(object sender, EventArgs e)
         {
             label12.BackColor = Color.FromArgb(62, 155, 205);
+            label13.BackColor = Color.FromArgb(82, 175, 225);
         }
+
 
         private void label12_MouseLeave(object sender, EventArgs e)
         {
             label12.BackColor = Color.FromArgb(42, 135, 185);
+            label13.BackColor = Color.FromArgb(62, 155, 205);
         }
 
         private void label12_Click(object sender, EventArgs e)
@@ -422,11 +436,13 @@ namespace textMagic_Desktop
         private void label14_MouseEnter(object sender, EventArgs e)
         {
             label14.BackColor = Color.FromArgb(62, 155, 205);
+            label21.BackColor = Color.FromArgb(82, 175, 225);
         }
 
         private void label14_MouseLeave(object sender, EventArgs e)
         {
             label14.BackColor = Color.FromArgb(42, 135, 185);
+            label21.BackColor = Color.FromArgb(62, 155, 205);
         }
 
         private void label14_Click(object sender, EventArgs e)
@@ -444,11 +460,13 @@ namespace textMagic_Desktop
         private void label16_MouseEnter(object sender, EventArgs e)
         {
             label16.BackColor = Color.FromArgb(62, 155, 205);
+            label15.BackColor = Color.FromArgb(82, 175, 225);
         }
 
         private void label16_MouseLeave(object sender, EventArgs e)
         {
             label16.BackColor = Color.FromArgb(42, 135, 185);
+            label15.BackColor = Color.FromArgb(62, 155, 205);
         }
 
         private void label16_Click(object sender, EventArgs e)
@@ -537,6 +555,92 @@ namespace textMagic_Desktop
                 {
                     textBox3.Text += "+" + dataGridView1.Rows[i].Cells[2].Value.ToString() + Environment.NewLine;
                 }
+            }
+        }
+
+        private void label13_MouseEnter(object sender, EventArgs e)
+        {
+            label12.BackColor = Color.FromArgb(62, 155, 205);
+            label13.BackColor = Color.FromArgb(82, 175, 225);
+        }
+
+        private void label13_MouseLeave(object sender, EventArgs e)
+        {
+            label12.BackColor = Color.FromArgb(42, 135, 185);
+            label13.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Title = "Select a .txt file.";
+            ofd.Filter = "Text files (*.txt) | *.txt";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                textBox3.Text = sr.ReadToEnd();
+            }
+        }
+
+        private void label21_MouseEnter(object sender, EventArgs e)
+        {
+            label14.BackColor = Color.FromArgb(62, 155, 205);
+            label21.BackColor = Color.FromArgb(82, 175, 225);
+        }
+
+        private void label21_MouseLeave(object sender, EventArgs e)
+        {
+            label14.BackColor = Color.FromArgb(42, 135, 185);
+            label21.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label15_MouseLeave(object sender, EventArgs e)
+        {
+            label16.BackColor = Color.FromArgb(42, 135, 185);
+            label15.BackColor = Color.FromArgb(62, 155, 205);
+        }
+
+        private void label15_MouseEnter(object sender, EventArgs e)
+        {
+            label16.BackColor = Color.FromArgb(62, 155, 205);
+            label15.BackColor = Color.FromArgb(82, 175, 225);
+        }
+
+        private void label21_Click(object sender, EventArgs e)
+        {
+            StreamReader sr1 = new StreamReader(@"C:\temp\TextMagicPreviouslySentSMSnumber.txt");
+            StreamReader sr2 = new StreamReader(@"C:\temp\TextMagicPreviouslySentSMSmessage.txt");
+
+            textBox3.Text = sr1.ReadToEnd();
+            textBox4.Text = sr2.ReadToEnd();
+
+            sr1.Dispose();
+            sr2.Dispose();
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            panel6.Visible = true;
+
+            dataGridView1.ColumnCount = 4;
+            dataGridView1.Columns[0].Name = "First name";
+            dataGridView1.Columns[1].Name = "Last name";
+            dataGridView1.Columns[2].Name = "Phone";
+            dataGridView1.Columns[3].Name = "Country";
+
+            int rowsfordatagrid = api.GetContacts().Resources.Count;
+
+            for (int i = rowsfordatagrid - 1; i >= 0; i--)
+            {
+                string[] row =
+                {
+                    api.GetContacts().Resources[index:i].FirstName,
+                    api.GetContacts().Resources[index:i].LastName,
+                    api.GetContacts().Resources[index:i].Phone,
+                    api.GetContacts().Resources[index:i].Country.Name
+                };
+
+                dataGridView1.Rows.Add(row);
             }
         }
     }

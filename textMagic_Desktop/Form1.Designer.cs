@@ -36,7 +36,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,14 +56,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,19 +90,19 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(138)))));
             this.panel5.Controls.Add(this.panel6);
-            this.panel5.Controls.Add(this.label17);
             this.panel5.Controls.Add(this.label16);
             this.panel5.Controls.Add(this.label15);
             this.panel5.Controls.Add(this.label14);
-            this.panel5.Controls.Add(this.label13);
+            this.panel5.Controls.Add(this.label21);
             this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.textBox4);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.textBox3);
+            this.panel5.Controls.Add(this.label13);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Controls.Add(this.textBox4);
-            this.panel5.Controls.Add(this.label7);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.textBox3);
             this.panel5.Location = new System.Drawing.Point(20, 20);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1240, 620);
@@ -113,7 +113,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label11.Cursor = System.Windows.Forms.Cursors.Default;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -128,7 +128,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label10.Cursor = System.Windows.Forms.Cursors.Default;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -172,32 +172,16 @@
             this.textBox4.TabStop = false;
             this.textBox4.MouseLeave += new System.EventHandler(this.textBox4_MouseLeave);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label7.Location = new System.Drawing.Point(20, 282);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 32);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Message";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label8.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label8.Location = new System.Drawing.Point(20, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(367, 32);
+            this.label8.Size = new System.Drawing.Size(572, 42);
             this.label8.TabIndex = 12;
             this.label8.Text = "Recipients (One number per line)";
             this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -208,7 +192,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(20, 62);
+            this.textBox3.Location = new System.Drawing.Point(20, 56);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -220,13 +204,13 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(92)))), ((int)(((byte)(138)))));
+            this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(20, 20);
@@ -236,16 +220,17 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
             this.label6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label6.Location = new System.Drawing.Point(20, 284);
+            this.label6.Location = new System.Drawing.Point(20, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(1200, 312);
+            this.label6.Size = new System.Drawing.Size(1200, 367);
             this.label6.TabIndex = 10;
             this.label6.Text = resources.GetString("label6.Text");
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
             // 
@@ -325,10 +310,10 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15.75F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(920, 77);
+            this.label2.Location = new System.Drawing.Point(890, 77);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.label2.Size = new System.Drawing.Size(300, 36);
+            this.label2.Size = new System.Drawing.Size(330, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "API key";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -363,10 +348,10 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(920, 20);
+            this.label1.Location = new System.Drawing.Point(890, 20);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
-            this.label1.Size = new System.Drawing.Size(300, 36);
+            this.label1.Size = new System.Drawing.Size(330, 36);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -422,9 +407,9 @@
             this.label12.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label12.Location = new System.Drawing.Point(611, 62);
+            this.label12.Location = new System.Drawing.Point(612, 20);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(292, 40);
+            this.label12.Size = new System.Drawing.Size(294, 40);
             this.label12.TabIndex = 18;
             this.label12.Text = "Import contacts";
             this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -434,17 +419,20 @@
             // 
             // label13
             // 
-            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
             this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label13.Location = new System.Drawing.Point(611, 112);
+            this.label13.Location = new System.Drawing.Point(612, 45);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(292, 81);
+            this.label13.Size = new System.Drawing.Size(294, 112);
             this.label13.TabIndex = 19;
-            this.label13.Text = "Import file must be a .txt file, where contacts\r\nare seperated by a new line.";
+            this.label13.Text = "\r\nImport file must be a .txt file, where contacts\r\nare seperated by a new line.";
             this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            this.label13.MouseEnter += new System.EventHandler(this.label13_MouseEnter);
+            this.label13.MouseLeave += new System.EventHandler(this.label13_MouseLeave);
             // 
             // label14
             // 
@@ -453,29 +441,15 @@
             this.label14.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label14.Location = new System.Drawing.Point(923, 62);
+            this.label14.Location = new System.Drawing.Point(926, 20);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(292, 40);
+            this.label14.Size = new System.Drawing.Size(294, 40);
             this.label14.TabIndex = 20;
             this.label14.Text = "Previous message";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label14.Click += new System.EventHandler(this.label14_Click);
             this.label14.MouseEnter += new System.EventHandler(this.label14_MouseEnter);
             this.label14.MouseLeave += new System.EventHandler(this.label14_MouseLeave);
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label15.Location = new System.Drawing.Point(923, 112);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(292, 50);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Allows you to resend the previously sent message.";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label16
             // 
@@ -484,9 +458,9 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label16.Location = new System.Drawing.Point(611, 203);
+            this.label16.Location = new System.Drawing.Point(612, 177);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(292, 40);
+            this.label16.Size = new System.Drawing.Size(294, 40);
             this.label16.TabIndex = 22;
             this.label16.Text = "Contacts";
             this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -494,29 +468,15 @@
             this.label16.MouseEnter += new System.EventHandler(this.label16_MouseEnter);
             this.label16.MouseLeave += new System.EventHandler(this.label16_MouseLeave);
             // 
-            // label17
-            // 
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.label17.Location = new System.Drawing.Point(611, 253);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(292, 50);
-            this.label17.TabIndex = 23;
-            this.label17.Text = "Shows you your saved contacts and allows you to choose them.";
-            this.label17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label20);
             this.panel6.Controls.Add(this.label19);
             this.panel6.Controls.Add(this.label18);
             this.panel6.Controls.Add(this.dataGridView1);
-            this.panel6.Location = new System.Drawing.Point(610, 62);
+            this.panel6.Location = new System.Drawing.Point(610, 20);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(610, 538);
+            this.panel6.Size = new System.Drawing.Size(610, 580);
             this.panel6.TabIndex = 24;
             this.panel6.Visible = false;
             // 
@@ -526,7 +486,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(172, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(438, 540);
+            this.dataGridView1.Size = new System.Drawing.Size(438, 582);
             this.dataGridView1.TabIndex = 0;
             // 
             // label18
@@ -580,6 +540,54 @@
             this.label20.MouseEnter += new System.EventHandler(this.label20_MouseEnter);
             this.label20.MouseLeave += new System.EventHandler(this.label20_MouseLeave);
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(135)))), ((int)(((byte)(185)))));
+            this.label7.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label7.Location = new System.Drawing.Point(20, 286);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(572, 42);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "Message";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label21
+            // 
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.label21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.White;
+            this.label21.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label21.Location = new System.Drawing.Point(926, 45);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(294, 112);
+            this.label21.TabIndex = 26;
+            this.label21.Text = "\r\nAllows you to resend the previously sent message.";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label21.Click += new System.EventHandler(this.label21_Click);
+            this.label21.MouseEnter += new System.EventHandler(this.label21_MouseEnter);
+            this.label21.MouseLeave += new System.EventHandler(this.label21_MouseLeave);
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(155)))), ((int)(((byte)(205)))));
+            this.label15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label15.Location = new System.Drawing.Point(612, 202);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(294, 112);
+            this.label15.TabIndex = 27;
+            this.label15.Text = "\r\nShows you your saved contacts and allows you to choose them.";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            this.label15.MouseEnter += new System.EventHandler(this.label15_MouseEnter);
+            this.label15.MouseLeave += new System.EventHandler(this.label15_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,22 +640,22 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label15;
     }
 }
 
